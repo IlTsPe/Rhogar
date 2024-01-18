@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/vendor/normalize.css'
+import './css/app.css'
+import Profile from './Components/Profile/Profile';
+import HP from './Components/HP/HP';
+import InfoList from './Components/Accodrion/InfoList';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="wrapper">
+			<Profile />
+			<HP />
+			<InfoList />
+		</div>
+	);
 }
 
 export default App;
