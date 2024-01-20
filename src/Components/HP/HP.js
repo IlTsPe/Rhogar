@@ -48,7 +48,9 @@ const HP = () => {
 	return (
 		<Section>
 			<div className={style['heal-point']}>
-				<span className={`${style.progress} ${style[classes()]}`} style={{ width: `${percentage}%` }} />
+				<div className={style['progress-wrapper']}>
+					<span className={`${style.progress} ${style[classes()]}`} style={{ width: `${percentage}%` }} />
+				</div>
 				<h2>Здоровье: <u>{currentHP}</u> <span>(макс. {maxHP})</span></h2>
 				<div>
 					<select className={style['ice-background']} name="range" id="range" value={value} onChange={calculation}>

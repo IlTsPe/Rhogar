@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import style from './list.module.scss';
 import Section from '../UI/Section';
+import Button from '../UI/Button'
 
 const characterData = [
 	{
@@ -44,7 +45,7 @@ const InfoList = () => {
 
 	return (
 		<Section className={style['list-wrapper']}>
-			<button onClick={openAccordion}>Характеристики</button>
+			<Button onClick={openAccordion} className={`${style['character-btn']} ${!isShown ? '' : style['character-btn--active']}`}>Характеристики</Button>
 			<ul className={`${style.list} ${isShown ? '' : style['list-hide']}`}>
 				{
 					characterData.map(item => (

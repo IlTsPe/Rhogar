@@ -41,12 +41,14 @@
 			transition: fill 0.15s ease-in;
 		}
 
-		&:hover path {
-			stroke: rgb(123, 185, 255);
-		}
+		@media (hover: hover) {
+			&:hover path {
+				stroke: rgb(123, 185, 255);
+			}
 
-		&:hover circle {
-			fill: rgb(123, 185, 255);
+			&:hover circle {
+				fill: rgb(123, 185, 255);
+			}
 		}
 
 		@media(max-width:500px) {

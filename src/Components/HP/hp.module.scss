@@ -104,7 +104,12 @@
 	height: 10px;
 	border-radius: 5px;
 	transition: 0.4s ease-in-out;
-	box-shadow: 0 2px 3px rgb(0, 0, 0);
+
+	&-wrapper {
+		border-radius: 5px;
+		background-color: #d1d1d1;
+		box-shadow: 0 2px 3px rgb(0, 0, 0);
+	}
 
 	&::after {
 		content: '';
@@ -112,7 +117,6 @@
 		top: 0;
 		left: 0;
 		background-image: url(../../../public/img/stars.gif);
-		// background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center;
 		width: 100%;
@@ -131,7 +135,7 @@
 }
 
 .yellow {
-	background-color: rgb(238, 222, 82);
+	background-color: rgb(233, 216, 69);
 }
 
 .orange {
