@@ -1,10 +1,47 @@
 .fight {
+	padding-top: 40px;
 	text-align: center;
 
-	h2 {
-		padding-top: 40px;
-		padding-bottom: 20px;
-		font-size: 30px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	.berserk-on {
+		box-shadow: 0 0 5px rgba(255, 0, 0, 0.493);
+		background-color: rgba(255, 0, 0, 0.493);
+	}
+
+	.berserk-off {
+		box-shadow: 0 0 5px red;
+		background-color: rgba(255, 0, 0, 0.829);
+	}
+
+
+	label {
+		padding: 10px 15px;
+		margin-bottom: 10px;
+		display: inline-block;
+		font-size: 18px;
+		color: white;
+		border-radius: 10px;
+		cursor: pointer;
+		transition: 0.2 ease-in;
+		color: white;
+		transition: 0.15s ease-in;
+
+		@media(hover:hover) {
+			&:hover {
+				box-shadow: 0 0 5px rgba(103, 151, 255, 0.829);
+				background-color: rgba(103, 151, 255, 0.829);
+			}
+		}
+	}
+
+	input {
+		display: none;
 	}
 }
 
@@ -24,15 +61,9 @@
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.623);
 	background-color: rgb(255, 209, 209);
 
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-
 	li {
 		padding: 20px 10px;
+		position: relative;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 		align-items: center;
@@ -48,6 +79,7 @@
 		&:active .descr {
 			opacity: 1;
 			visibility: visible;
+			line-height: 130%;
 		}
 
 		.descr {
@@ -64,17 +96,9 @@
 			border-radius: 10px;
 			opacity: 0;
 			visibility: hidden;
+			z-index: 10;
 			transition: 0.2s ease-in;
 		}
-	}
-
-	span {
-		padding-bottom: 3px;
-		margin-bottom: 9px;
-		display: inline-block;
-		font-size: 15.5px;
-		border-bottom: solid 1px black;
-		width: 100%;
 	}
 
 	p {
@@ -87,6 +111,20 @@
 
 		@media(max-width:600px) {
 			font-size: 16px;
+		}
+	}
+
+	&--berserk {
+		background-color: rgb(255, 160, 160);
+		box-shadow: 0 0 10px rgb(255, 31, 31);
+		border-color: rgb(255, 31, 31);
+
+		li:not(:last-child) {
+			border-color: rgb(255, 31, 31);
+		}
+
+		p {
+			background-color: rgb(175, 2, 2);
 		}
 	}
 }

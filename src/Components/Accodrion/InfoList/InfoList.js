@@ -5,7 +5,6 @@ import style from './list.module.scss';
 
 
 const InfoList = ({ data, btnName }) => {
-	console.log(data);
 	const [isShown, setIsShown] = useState(false);
 
 	const openAccordion = () => {

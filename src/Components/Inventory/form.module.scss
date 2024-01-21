@@ -1,0 +1,22 @@
+.form {
+	input {
+		margin-right: 10px;
+		padding: 10px;
+		font-size: 20px;
+	}
+
+	button {
+		padding: 10px;
+		font-size: 20px;
+		background-color: rgb(43, 226, 226);
+	}
+
+	&-wrapper {
+		padding-top: 50px;
+		text-align: center;
+
+		h2 {
+			margin-bottom: 20px;
+		}
+	}
+}

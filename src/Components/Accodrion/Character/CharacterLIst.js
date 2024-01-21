@@ -5,7 +5,7 @@ const CharacterLIst = ({ characters, show }) => {
 		<ul className={`${style.list} ${show ? '' : style['list-hide']}`}>
 			{
 				characters.map(item => (
-					<li className={style['main-character']}>
+					<li className={style['main-character']} key={Math.random()}>
 						<div>
 							<h4>{item.parameter}</h4>
 							<p>{item.value}</p>
