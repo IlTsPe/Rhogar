@@ -44,12 +44,13 @@ const berserkData = [
 ]
 
 const Fight = () => {
-	const [isBerserk, setIsBerserk] = useState();
+	const [isBerserk, setIsBerserk] = useState(JSON.parse(localStorage.getItem('Berserk')) || false);
 
 	const fury = () => {
-		localStorage.setItem('Berserk', isBerserk);
-		setIsBerserk(prev => prev = !prev)
+		setIsBerserk(prev => !prev);
 	};
+
+	localStorage.setItem('Berserk', JSON.stringify(isBerserk));
 
 	return (
 		<div className={style.fight}>
