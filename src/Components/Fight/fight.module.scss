@@ -1,3 +1,11 @@
+:root {
+	--white-color: white;
+	--red-color: rgb(255, 31, 31);
+	--red-color-opacity-5: rgba(255, 0, 0, 0.493);
+	--border-10: 10px;
+	--gap-10: 10px;
+}
+
 .fight {
 	padding-top: 40px;
 	text-align: center;
@@ -10,26 +18,25 @@
 	user-select: none;
 
 	.berserk-on {
-		box-shadow: 0 0 5px rgba(255, 0, 0, 0.493);
-		background-color: rgba(255, 0, 0, 0.493);
+		box-shadow: 0 0 5px var(--red-color-opacity-5);
+		background-color: var(--red-color-opacity-5);
 	}
 
 	.berserk-off {
-		box-shadow: 0 0 5px red;
+		box-shadow: 0 0 5px var(--red-color);
 		background-color: rgba(255, 0, 0, 0.829);
 	}
-
 
 	label {
 		padding: 10px 15px;
 		margin-bottom: 10px;
 		display: inline-block;
 		font-size: 18px;
-		color: white;
-		border-radius: 10px;
+		color: var(--white-color);
+		border-radius: var(--border-10);
 		cursor: pointer;
 		transition: 0.2 ease-in;
-		color: white;
+		color: var(--white-color);
 		transition: 0.15s ease-in;
 
 		@media(hover:hover) {
@@ -57,7 +64,7 @@
 	width: 100%;
 	max-width: 600px;
 	border: solid 1px black;
-	border-radius: 10px;
+	border-radius: var(--border-10);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.623);
 	background-color: rgb(255, 209, 209);
 
@@ -67,19 +74,35 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 		align-items: center;
-		column-gap: 10px;
-		row-gap: 10px;
+		column-gap: var(--gap-10);
+		row-gap: var(--gap-10);
 		width: 100%;
 		cursor: pointer;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 2%;
+			right: 0.5%;
+			width: 20px;
+			height: 20px;
+			background-image: url(./img/click.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
 
 		&:not(:last-child) {
 			border-bottom: solid 1px black;
 		}
 
+		.descr {
+			line-height: 130%;
+		}
+
 		&:active .descr {
 			opacity: 1;
 			visibility: visible;
-			line-height: 130%;
 		}
 
 		.descr {
@@ -90,10 +113,10 @@
 			transform: translate(-50%, -50%);
 			font-size: 20px;
 			width: 90%;
-			color: white;
+			color: var(--white-color);
 			background-color: rgb(9, 58, 121);
 			box-shadow: 0 0 15px rgba(9, 58, 121, 0.7);
-			border-radius: 10px;
+			border-radius: var(--border-10);
 			opacity: 0;
 			visibility: hidden;
 			z-index: 10;
@@ -105,7 +128,7 @@
 		padding: 7px;
 		font-size: 22px;
 		font-weight: 500;
-		color: white;
+		color: var(--white-color);
 		border-radius: 7px;
 		background-color: rgb(94, 30, 30);
 
@@ -116,11 +139,17 @@
 
 	&--berserk {
 		background-color: rgb(255, 160, 160);
-		box-shadow: 0 0 10px rgb(255, 31, 31);
-		border-color: rgb(255, 31, 31);
+		box-shadow: 0 0 10px var(--red-color);
+		border-color: var(--red-color);
 
-		li:not(:last-child) {
-			border-color: rgb(255, 31, 31);
+		li {
+			&::after {
+				background-image: url(./img/clickBerserk.png);
+			}
+
+			&:not(:last-child) {
+				border-color: var(--red-color);
+			}
 		}
 
 		p {

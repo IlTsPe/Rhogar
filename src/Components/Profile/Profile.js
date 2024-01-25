@@ -7,8 +7,8 @@ import Section from '../UI/Section';
 const Profile = () => {
 	const [showPersonality, setShowPersonality] = useState(false);
 
-	const openModal = () => setShowPersonality(true);
-	const closeModal = () => setShowPersonality(false);
+	const openModal = () => setShowPersonality(prev => !prev);
+	const closeModal = () => setShowPersonality(prev => !prev);
 
 	return (
 		<Section>

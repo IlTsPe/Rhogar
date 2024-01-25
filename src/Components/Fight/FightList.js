@@ -37,7 +37,6 @@ const FightList = ({ attackData, berserk, isBerserk }) => {
 					</ul>
 			}
 		</>
-
 	);
 }
 

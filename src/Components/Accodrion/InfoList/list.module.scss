@@ -1,3 +1,7 @@
+:root {
+	--white-color: white;
+}
+
 .character-btn {
 	padding: 20px 60px;
 	position: relative;
@@ -6,7 +10,7 @@
 	border-radius: 20px;
 	font-size: 18px;
 	font-weight: 600;
-	color: white;
+	color: var(--white-color);
 	background: #0054c3;
 	background: linear-gradient(180deg, #2b95e4 20%, #0054c3 75%);
 	box-shadow: inset 0 0 10px rgb(1, 28, 102);
@@ -18,7 +22,7 @@
 		top: 50%;
 		right: 7%;
 		transform: translateY(-50%);
-		background-image: url(../../../../public/img/arrow.png);
+		background-image: url(./img/arrow.png);
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;
@@ -29,16 +33,16 @@
 
 	@media (hover: hover) {
 		&:hover {
-			box-shadow: inset 0 0 5px rgb(255, 255, 255);
+			box-shadow: inset 0 0 5px var(--white-color);
 		}
 	}
 
 	&:active {
-		box-shadow: inset 0 0 20px rgb(255, 255, 255);
+		box-shadow: inset 0 0 20px var(--white-color);
 	}
 
 	&--active {
-		box-shadow: inset 0 0 10px rgb(255, 255, 255);
+		box-shadow: inset 0 0 10px var(--white-color);
 
 		&::after {
 			top: 40%;

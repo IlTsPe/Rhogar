@@ -5,8 +5,7 @@ import HP from './Components/HP/HP';
 import Fight from './Components/Fight/Fight';
 import Accordions from './Components/Accodrion/Accordions';
 import InventoryForm from './Components/Inventory/InventoryForm';
-import InventoryList from './Components/Inventory/InventoryList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const goods = [
 	{
@@ -36,17 +35,25 @@ const goods = [
 ]
 
 function App() {
-	const [usersData, setUsersData] = useState(goods);
+	const [goodsData, setGoodsData] = useState(JSON.parse(localStorage.getItem('Inventory')) || goods);
 
 	const getUsersData = (name) => {
-		const newUserObj = {
+		const newGoodsObj = {
 			id: Math.random().toFixed(2),
 			name: name,
 		};
-		setUsersData([...usersData, newUserObj]);
+		setGoodsData(prev => [...prev, newGoodsObj]);
 	};
 
-	const deleteUser = (users) => setUsersData(usersData.filter(user => user.id !== users.id));
+	const deleteUser = (goods) => {
+		setGoodsData(goodsData.filter(good => good.id !== goods.id));
+	}
+
+	useEffect(() => {
+		const JSONData = JSON.stringify(goodsData);
+		localStorage.setItem('Inventory', JSONData);
+	}, [goodsData]);
+
 
 	return (
 		<div className="wrapper">
@@ -54,8 +61,7 @@ function App() {
 			<HP />
 			<Fight />
 			<Accordions />
-			<InventoryForm onSubmit={getUsersData} />
-			<InventoryList data={usersData} deleteUser={deleteUser} />
+			<InventoryForm onSubmit={getUsersData} data={goodsData} deleteUser={deleteUser} />
 		</div>
 	);
 }

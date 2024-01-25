@@ -1,7 +1,10 @@
 const InventoryItem = ({ children, remove, data, className }) => {
 	return (
-		<li className={className} onClick={() => remove(data)}>
+		<li className={className} >
 			{children}
+			<button>
+				<img src='img/garbage.png' alt="Удалить" onClick={() => remove(data)} />
+			</button>
 		</li>
 	);
 }

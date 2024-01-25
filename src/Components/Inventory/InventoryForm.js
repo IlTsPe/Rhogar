@@ -1,14 +1,14 @@
 import Section from '../UI/Section';
 import Button from '../UI/Button';
+import InventoryList from './InventoryList';
 import { useRef } from 'react';
 import style from './form.module.scss';
 
-const Inventory = ({ onSubmit }) => {
+const Inventory = ({ onSubmit, data, deleteUser }) => {
 	const inputData = useRef();
 
 	const sendForm = (e) => {
 		e.preventDefault();
-
 		onSubmit(inputData.current.value);
 	}
 
@@ -19,6 +19,7 @@ const Inventory = ({ onSubmit }) => {
 				<input type="text" placeholder='Вещь' ref={inputData} />
 				<Button type='submit' onClick={sendForm}>Добавить</Button>
 			</form>
+			<InventoryList data={data} deleteUser={deleteUser} />
 		</Section>
 	);
 }

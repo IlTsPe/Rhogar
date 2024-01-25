@@ -6,18 +6,14 @@ import Section from '../UI/Section';
 const HP = () => {
 	const maxHP = 74;
 	const damageOrHeal = useRef();
-	const [currentHP, setСurrentHP] = useState(maxHP);
+	const [currentHP, setСurrentHP] = useState(JSON.parse(localStorage.getItem('HP')) || maxHP);
 	const [value, setValue] = useState('minus');
 
 	const calculation = (e) => {
 		setValue(e.target.value)
 	};
 
-	let newHP = currentHP;
-	let b = localStorage.getItem('HP');
-	newHP = b;
-
-	const percentage = Math.round((newHP * 100) / maxHP);
+	const percentage = Math.round((currentHP * 100) / maxHP);
 
 	const classes = () => {
 		if (percentage >= 80) return 'green'
@@ -28,6 +24,7 @@ const HP = () => {
 	}
 
 	const submit = () => {
+		let newHP;
 		if (value === 'plus') {
 			newHP = currentHP + +damageOrHeal.current.value;
 			setСurrentHP(newHP)
@@ -37,18 +34,18 @@ const HP = () => {
 			setСurrentHP(newHP)
 		}
 		if (newHP > maxHP) {
-			alert('Нельзя больше максимального ХП хилиться')
+			alert('Нельзя хилиться больше максимального HP')
 			setСurrentHP(currentHP)
-			newHP = currentHP
+			newHP = currentHP;
 		}
 		if (newHP <= 0) {
 			alert('Приляг и отдохни')
 			setСurrentHP(0)
-			newHP = 0
+			newHP = 0;
 		}
-		localStorage.setItem('HP', newHP);
 		classes();
 		damageOrHeal.current.value = '';
+		localStorage.setItem('HP', JSON.stringify(newHP));
 	};
 
 	return (
@@ -57,7 +54,7 @@ const HP = () => {
 				<div className={style['progress-wrapper']}>
 					<span className={`${style.progress} ${style[classes()]}`} style={{ width: `${percentage}%` }} />
 				</div>
-				<h2>Здоровье: <u>{newHP}</u> <span>(макс. {maxHP})</span></h2>
+				<h2>Здоровье: <u>{currentHP}</u> <span>(макс. {maxHP})</span></h2>
 				<div>
 					<select className={style['ice-background']} name="range" id="range" value={value} onChange={calculation}>
 						<option value="plus">+</option>
