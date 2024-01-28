@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8a0845a7.css",
+    "main.js": "/static/js/main.1108cd49.js",
+    "static/media/tenror.gif": "/static/media/tenror.cdab27b36c02efac930f.gif",
+    "static/media/stars.gif": "/static/media/stars.20b380cded08d14ff29b.gif",
+    "static/media/frame.png": "/static/media/frame.4aa2bd779fd7dedef212.png",
+    "static/media/snowBG.jpg": "/static/media/snowBG.2a38e10d80a2033b9872.jpg",
+    "static/media/EBGaramond08Regular.woff": "/static/media/EBGaramond08Regular.675d7577dd587ddc8775.woff",
+    "static/media/EBGaramond08Regular.woff2": "/static/media/EBGaramond08Regular.8fc677ebd9f66668564f.woff2",
+    "static/media/freez2.jpg": "/static/media/freez2.888a516494bcb4443793.jpg",
+    "static/media/bloodBG.png": "/static/media/bloodBG.11d2cb40075497b0eeca.png",
+    "static/media/Russo.woff2": "/static/media/Russo.fb39a75b10b921733b80.woff2",
+    "static/media/Russo.woff": "/static/media/Russo.2ac3b390c749953331b9.woff",
+    "static/media/arrow.png": "/static/media/arrow.2f7c4256ec95624c0e8e.png",
+    "index.html": "/index.html",
+    "main.8a0845a7.css.map": "/static/css/main.8a0845a7.css.map",
+    "main.1108cd49.js.map": "/static/js/main.1108cd49.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a0845a7.css",
+    "static/js/main.1108cd49.js"
+  ]
+}
