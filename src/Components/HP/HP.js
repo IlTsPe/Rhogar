@@ -6,7 +6,7 @@ import Section from '../UI/Section';
 const HP = () => {
 	const maxHP = 74;
 	const damageOrHeal = useRef();
-	const [currentHP, setСurrentHP] = useState(JSON.parse(localStorage.getItem('HP')) || maxHP);
+	const [currentHP, setСurrentHP] = useState(JSON.parse(localStorage.getItem('HealPoints')) ?? maxHP);
 	const [value, setValue] = useState('minus');
 
 	const calculation = (e) => {
@@ -40,12 +40,12 @@ const HP = () => {
 		}
 		if (newHP <= 0) {
 			alert('Приляг и отдохни')
-			setСurrentHP(0)
 			newHP = 0;
+			setСurrentHP(newHP)
 		}
 		classes();
 		damageOrHeal.current.value = '';
-		localStorage.setItem('HP', JSON.stringify(newHP));
+		localStorage.setItem('HealPoints', JSON.stringify(newHP));
 	};
 
 	return (
@@ -61,10 +61,29 @@ const HP = () => {
 						<option value="minus">-</option>
 					</select>
 				</div>
-				<div>
+				<div className={style.math}>
 					<input className={style['ice-background']} type="number" ref={damageOrHeal} placeholder='Сколько' />
 				</div>
 				<Button className={style['ice-background']} onClick={submit}>Рассчитать</Button>
+				{
+					currentHP === 0 ?
+						<div className={style['death-challenge']}>
+							<div className={style.challenge}>
+								<span>успехи</span>
+								<input type="checkbox" />
+								<input type="checkbox" />
+								<input type="checkbox" />
+							</div>
+							<div className={style.challenge}>
+								<span>провалы</span>
+								<input type="checkbox" />
+								<input type="checkbox" />
+								<input type="checkbox" />
+							</div>
+						</div> :
+						null
+				}
+
 			</div>
 		</Section>
 	);

@@ -9,10 +9,13 @@
 
 .form {
 	margin-bottom: var(--mb-20);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
 
 	input {
 		padding: 10px;
-		margin-right: 10px;
 		font-size: var(--fz-20);
 		border-radius: var(--br-20);
 		color: white;

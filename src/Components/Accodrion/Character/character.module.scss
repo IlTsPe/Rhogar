@@ -9,7 +9,7 @@
 	margin-left: auto;
 	position: relative;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 400px);
+	grid-template-columns: repeat(auto-fit, 300px);
 	column-gap: var(--gap-20);
 	row-gap: var(--gap-20);
 	width: 85%;
@@ -22,13 +22,17 @@
 	opacity: 1;
 	visibility: visible;
 	transition: 0.4s ease-in;
-	box-shadow: 0 0 7px black;
+	box-shadow: 0 0 7px rgb(172, 172, 172);
 
 	@media(max-width:1440px) {
 		width: 100%;
 	}
 
-	@media(max-width:750px) {
+	@media(max-width:950px) {
+		grid-template-columns: repeat(auto-fit, 250px);
+	}
+
+	@media(max-width:650px) {
 		grid-template-columns: repeat(auto-fit, 170px);
 	}
 
@@ -37,7 +41,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-image: url(./img/freez.jpg);
+		background-image: url(./img/freez2.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;

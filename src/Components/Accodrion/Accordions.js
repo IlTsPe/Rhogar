@@ -24,7 +24,7 @@ const characterData = [
 		modifier: '-1'
 	},
 	{
-		parameter: 'Мудрость',
+		parameter: 'Мудрость (+ пассивная)',
 		value: 10,
 		modifier: '0'
 	},
@@ -32,7 +32,11 @@ const characterData = [
 		parameter: 'Харизма',
 		value: 4,
 		modifier: '+2'
-	}
+	},
+	{
+		parameter: 'Бонус умения',
+		value: 3,
+	},
 ]
 const savingThrow = [
 	{

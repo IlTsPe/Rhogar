@@ -34,7 +34,7 @@ const berserkData = [
 		name: 'Двуручный меч',
 		bonus: 8,
 		type: '2к6 + 7/руб. (3 атаки)',
-		descr: 'При каждом попадании через врага проходит молния. Спасбросок силы: 15, чтобы не упасть.'
+		descr: 'До 5 ф.'
 	},
 	{
 		name: 'Топор',
@@ -59,7 +59,7 @@ const berserkData = [
 const Fight = () => {
 	const [isBerserk, setIsBerserk] = useState(JSON.parse(localStorage.getItem('Berserk')) || false);
 
-	const fury = () => setIsBerserk(prev => !prev);
+	const furyHandle = () => setIsBerserk(prev => !prev);
 
 	localStorage.setItem('Berserk', JSON.stringify(isBerserk));
 
@@ -70,7 +70,7 @@ const Fight = () => {
 					<label htmlFor='input' className={style['berserk-on']}>Выйти из ярости</label> :
 					<label htmlFor='input' className={style['berserk-off']}>Войти в ярость</label>
 			}
-			<input id='input' type='checkbox' onChange={fury} checked={isBerserk} />
+			<input id='input' type='checkbox' onChange={furyHandle} checked={isBerserk} />
 			<FightList attackData={attackData} berserk={berserkData} isBerserk={isBerserk} />
 		</Section>
 	);

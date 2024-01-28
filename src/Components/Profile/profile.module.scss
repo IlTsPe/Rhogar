@@ -1,10 +1,14 @@
-.profile-wrapper {
+.profile {
 	padding: 50px 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	column-gap: 30px;
+
+	&-wrapper {
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		column-gap: 30px;
+	}
 }
 
 .avatar {

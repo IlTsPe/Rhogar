@@ -21,7 +21,15 @@ const personality = [
 	{
 		header: "Изъяны",
 		descr: "Я скрываю темные, кровожадные мысли, не ушедшие ни после изоляции, ни после медитации"
-	}
+	},
+	{
+		header: "Знание языков",
+		descr: "Драконий, Утгарский, общий"
+	},
+	{
+		header: "Прочее",
+		descr: "Владение набором травника."
+	},
 ]
 
 const Personality = ({ state, closeModal }) => {
@@ -31,9 +39,9 @@ const Personality = ({ state, closeModal }) => {
 	}
 
 	return (
-		<Fragment>
+		<>
 			{createPortal(
-				<div>
+				<Fragment>
 					{state && (
 						<div className={style.overlay} onClick={closeOnOverlay}>
 							<div className={style.modal}>
@@ -47,13 +55,10 @@ const Personality = ({ state, closeModal }) => {
 							</div>
 						</div>
 					)}
-				</div>,
+				</Fragment>,
 				document.getElementById('modal'))
 			}
-
-
-
-		</Fragment>
+		</>
 	);
 }
 
