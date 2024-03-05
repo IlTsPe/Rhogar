@@ -1,13 +1,13 @@
 @font-face {
 	font-family: 'Garamond';
-	src: url('/fonts/EBGaramond08Regular.woff2') format('woff2'),
-		url('/fonts/EBGaramond08Regular.woff') format('woff');
+	src: url('fonts/EBGaramond08Regular.woff2') format('woff2'),
+		url('fonts/EBGaramond08Regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Russo';
-	src: url('/fonts/Russo.woff2') format('woff2'),
-		url('/fonts/Russo.woff') format('woff');
+	src: url('fonts/Russo.woff2') format('woff2'),
+		url('fonts/Russo.woff') format('woff');
 }
 
 body {
