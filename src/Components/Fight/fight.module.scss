@@ -1,0 +1,53 @@
+:root {
+	--white-color: white;
+	--red-color: rgb(255, 31, 31);
+	--red-color-opacity-5: rgba(255, 0, 0, 0.493);
+	--border-10: 10px;
+	--gap-10: 10px;
+}
+
+.fight {
+	padding-top: 40px;
+	text-align: center;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	.berserk-on {
+		box-shadow: 0 0 5px var(--red-color-opacity-5);
+		background-color: var(--red-color-opacity-5);
+	}
+
+	.berserk-off {
+		box-shadow: 0 0 5px var(--red-color);
+		background-color: rgba(255, 0, 0, 0.829);
+	}
+
+	label {
+		padding: 10px 15px;
+		margin-bottom: 10px;
+		display: inline-block;
+		font-size: 18px;
+		color: var(--white-color);
+		border-radius: var(--border-10);
+		cursor: pointer;
+		transition: 0.2 ease-in;
+		color: var(--white-color);
+		transition: 0.15s ease-in;
+
+		@media(hover:hover) {
+			&:hover {
+				box-shadow: 0 0 5px rgba(103, 151, 255, 0.829);
+				background-color: rgba(103, 151, 255, 0.829);
+			}
+		}
+	}
+
+	input {
+		display: none;
+	}
+}
