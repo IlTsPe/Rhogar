@@ -12,7 +12,11 @@ const Profile = () => {
 	const closeModal = () => setShowPersonality(prev => !prev);
 
 	useEffect(() => {
-		document.body.classList.toggle('modal-open');
+		if (showPersonality) {
+			document.body.classList.add('modal-open');
+		} else {
+			document.body.classList.remove('modal-open');
+		}
 	}, [showPersonality]);
 
 	return (

@@ -10,7 +10,10 @@ const InventoryForm = ({ onSubmit, data, deleteUser }) => {
 	const sendForm = (e) => {
 		e.preventDefault();
 		const currentInput = inputDataRef.current;
-		if (currentInput.value.trim().length === 0) return;
+		if (currentInput.value.trim().length === 0) {
+			currentInput.focus();
+			return;
+		}
 		onSubmit(currentInput.value);
 		currentInput.value = '';
 		currentInput.focus();

@@ -32,7 +32,7 @@
 			right: 0.5%;
 			width: 20px;
 			height: 20px;
-			background-image: url(img/click.png);
+			background-image: url(../../../assets/img/click.png);
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
@@ -90,7 +90,7 @@
 
 		li {
 			&::after {
-				background-image: url(img/clickBerserk.png);
+				background-image: url(../../../assets/img/clickBerserk.png);
 			}
 
 			&:not(:last-child) {

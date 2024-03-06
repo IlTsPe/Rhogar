@@ -1,16 +1,17 @@
 @font-face {
 	font-family: 'Garamond';
-	src: url('fonts/EBGaramond08Regular.woff2') format('woff2'),
-		url('fonts/EBGaramond08Regular.woff') format('woff');
+	src: url('../assets/fonts/EBGaramond08Regular.woff2') format('woff2'),
+		url('../assets/fonts/EBGaramond08Regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Russo';
-	src: url('fonts/Russo.woff2') format('woff2'),
-		url('fonts/Russo.woff') format('woff');
+	src: url('../assets/fonts/Russo.woff2') format('woff2'),
+		url('../assets/fonts/Russo.woff') format('woff');
 }
 
 body {
+	position: relative;
 	font-family: sans-serif;
 	font-size: 16px;
 	font-weight: 500;
@@ -46,7 +47,7 @@ select:focus-visible {
 }
 
 .overlay {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
