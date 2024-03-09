@@ -1,3 +1,30 @@
+:root {
+	/* colors*/
+	--white-color: white;
+	--red-color: rgb(255, 31, 31);
+	--red-color-opacity-5: rgba(255, 0, 0, 0.493);
+	--bg-color: rgb(72, 97, 209);
+	--effect-bg-color: rgb(47, 29, 209);
+
+	/* fonts */
+	--fz-20: 20px;
+	--fz-16: 16px;
+
+	/* borders */
+	--border-20: 20px;
+	--border-10: 10px;
+
+	/* indents */
+	--indent-20: 20px;
+	--indent-10: 10px;
+
+	/* percentage */
+	--per-100: 100%;
+
+	/* shadow effects */
+	--box-shadow-inset: inset 0 0 5px rgb(0, 0, 0);
+}
+
 @font-face {
 	font-family: 'Garamond';
 	src: url('../assets/fonts/EBGaramond08Regular.woff2') format('woff2'),

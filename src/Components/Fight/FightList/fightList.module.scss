@@ -20,8 +20,8 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 		align-items: center;
-		column-gap: var(--gap-10);
-		row-gap: var(--gap-10);
+		column-gap: var(--indent-10);
+		row-gap: var(--indent-10);
 		width: 100%;
 		cursor: pointer;
 
